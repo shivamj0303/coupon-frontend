@@ -6,11 +6,15 @@ function App() {
 
   const claimCoupon = async () => {
     try {
-      const res = await axios.post("https://coupon-backend-u5k9.onrender.com/claim", {}, { withCredentials: true });
+      const res = await axios.post(
+        `${import.meta.env.VITE_BACKEND_URL}/claim`, 
+        {}, 
+        { withCredentials: true }
+      );
       setMessage(res.data.message);
     } catch (error) {
-      setMessage("Error claiming coupon.");
-    }
+    setMessage("Error claiming coupon.");
+  }
   };
 
   return (
