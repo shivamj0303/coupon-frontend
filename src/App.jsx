@@ -6,7 +6,7 @@ function App() {
 
   const claimCoupon = async () => {
     try {
-      const res = await axios.post("http://localhost:5000/claim", {}, { withCredentials: true });
+      const res = await axios.post("https://coupon-backend-u5k9.onrender.com/claim", {}, { withCredentials: true });
       setMessage(res.data.message);
     } catch (error) {
       setMessage("Error claiming coupon.");
